@@ -7,14 +7,19 @@ import org.openqa.selenium.WebDriver;
 
 public class ConteudoPages {
 
-	static WebDriver navegador;
-
+	 WebDriver navegador;
+	//static LoginPages LoginPages;
 	public ConteudoPages(WebDriver navegador) {
+
 		this.navegador = navegador;
 	}
 
 	public void EditarConteudo() {
-		//Editar o Conteudo para testar a melhoria de limite de campo
+		//Editar o Conteudo para testar a melhoria de limite de campo		
+		//LoginPages.PreencherCamposSucesso();
+		navegador.findElement(By.name("j_username")).sendKeys("avaliacao_qa_samba@sambatech.com.br");
+		navegador.findElement(By.name("j_password")).sendKeys("123456789");
+		navegador.findElement(By.id("login")).click();
 		navegador.findElement(By.id("mn-content")).click();
 		navegador.findElement(By.className("edit-media-link")).click();
 		navegador.findElement(By.name("title")).clear();
@@ -28,7 +33,18 @@ public class ConteudoPages {
 			}
 
 	public void ExcluirConteudo() {
-
+    //Automacao do bug Excluir conteudo e o mesmo permanecer no Enviar
+		navegador.findElement(By.name("j_username")).sendKeys("avaliacao_qa_samba@sambatech.com.br");
+		navegador.findElement(By.name("j_password")).sendKeys("123456789");
+		navegador.findElement(By.id("login")).click();
+		navegador.findElement(By.id("mn-content")).click();
+		navegador.findElement(By.xpath("//*[@id=\"918c3c9bf117b27d65bbc39c99161264\"]/div[1]/div/input")).click();
+		navegador.findElement(By.id("bash-action")).click();
+		navegador.findElement(By.xpath("//*[@id=\"bash-action\"]/option[8]")).click();
+		navegador.findElement(By.className("btn btn-danger")).click();
+		navegador.findElement(By.id("mn-upload")).click();
+		String ArqExc = navegador.findElement(By.className("edit-media")).getText();
+		assertEquals("Editar informações", ArqExc);		
 	}
 
 }

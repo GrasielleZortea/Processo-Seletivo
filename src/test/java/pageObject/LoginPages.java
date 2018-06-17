@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 
 public class LoginPages {
 
-	static WebDriver navegador;
+	 WebDriver navegador;
 
 	public LoginPages(WebDriver navegador)	{
 		this.navegador = navegador;
