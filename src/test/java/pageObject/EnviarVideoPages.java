@@ -9,6 +9,8 @@ import org.openqa.selenium.WebElement;
 public class EnviarVideoPages {
 
 	WebDriver navegador;
+	By enviar = By.id("mn-upload");
+	By upload = By.xpath("//*[@id=\"uploader\"]/div[2]/input");
 
 	public EnviarVideoPages(WebDriver navegador) {
 		this.navegador = navegador;
@@ -16,11 +18,10 @@ public class EnviarVideoPages {
 
 	public void UploadoSucesso() {
 
-		navegador.findElement(By.id("mn-upload")).click();
-		navegador.findElement(By.id("uploader-large")).click();
-		navegador.findElement(By.id("upload")).click();
+		navegador.findElement(enviar).click();
+		//navegador.findElement(upload).click();
 		// clicar item do windows e abrir
-		WebElement file_input = navegador.findElement(By.id("upload"));
+		WebElement file_input = navegador.findElement(upload);
 		file_input.click();
 		file_input.sendKeys("C:\\Users\\cmarg\\Downloads\\Video Linxo 20s.mp4");
 		// clicar item do windows e abrir
