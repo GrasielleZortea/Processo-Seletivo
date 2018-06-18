@@ -38,7 +38,7 @@ public class CampanhaPages {
 		/*navegador.findElement(enviarAnuncio).click();
 		WebElement file_input = navegador.findElement(enviarAnuncio);
 		file_input.click();
-		file_input.sendKeys("C:\\Users\\cmarg\\Downloads\\Video Linxo 20s.mp4");*/
+		file_input.sendKeys("src\\test\\java\\arquivos\\Video Linxo 20s.mov");*/
 		//
 		navegador.findElement(urlDestino).sendKeys("Sambatech.com.br");
 		navegador.findElement(categoria).click();

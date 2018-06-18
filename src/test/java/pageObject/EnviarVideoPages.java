@@ -23,7 +23,7 @@ public class EnviarVideoPages {
 		// clicar item do windows e abrir
 		WebElement file_input = navegador.findElement(upload);
 		file_input.click();
-		file_input.sendKeys("C:\\Users\\cmarg\\Downloads\\Video Linxo 20s.mp4");
+		file_input.sendKeys("src\\test\\java\\arquivos\\Video Linxo 20s.mov");
 		// clicar item do windows e abrir
 
 		String uploadSucesso = navegador.findElement(By.className("progress progress-large progress-success"))
