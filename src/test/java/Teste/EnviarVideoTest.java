@@ -1,5 +1,6 @@
 package Teste;
 
+import java.awt.AWTException;
 import java.util.concurrent.TimeUnit;
 
 import org.junit.After;
@@ -35,7 +36,7 @@ public class EnviarVideoTest {
 	}
 
 	@Test
-	public void testEnviarVideo() {
+	public void testEnviarVideo() throws AWTException {
 		enviarVideosPage.UploadoSucesso();
 }
 	
