@@ -28,6 +28,6 @@ public void ArquivoTela(String fileRefPath) throws AWTException, InterruptedExce
 		robot.setAutoDelay(2000);
 		robot.keyPress(KeyEvent.VK_ENTER);
 		robot.keyRelease(KeyEvent.VK_ENTER);
-		Thread.sleep(200000);
+		Thread.sleep(500000);
 	}
 }

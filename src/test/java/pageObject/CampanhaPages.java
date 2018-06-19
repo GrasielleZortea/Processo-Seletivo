@@ -15,7 +15,7 @@ public class CampanhaPages {
 	By monetizacao = By.id("mn-monetization");
 	By criarCampanha = By.id("create-campaign");
 	By titulo = By.name("name");
-	By enviarAnuncio = By.id("upload");
+	By enviarAnuncio = By.xpath("//*[@id=\"new-campaign\"]/article[1]/div[2]/form/div[1]/div[2]/input");
 	By urlDestino = By.name("urlClickThrough");
 	By categoria = By.id("select-existing-channels");
 	By dataInicio = By.id("publishDate");
@@ -37,6 +37,9 @@ public class CampanhaPages {
 		navegador.findElement(monetizacao).click();
 		navegador.findElement(criarCampanha).click();
 		navegador.findElement(titulo).sendKeys("Criacao de campanha 01");
+		Thread.sleep(2000);
+		navegador.findElement(enviarAnuncio).click();
+		Thread.sleep(2000);
 		// Escolher arquivo
 		Arquivo video = new Arquivo();
 		video.ArquivoTela("Video Linxo 20s.mov");
