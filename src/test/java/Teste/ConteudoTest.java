@@ -1,5 +1,6 @@
 package Teste;
 
+import java.awt.AWTException;
 import java.util.concurrent.TimeUnit;
 
 import org.junit.After;
@@ -38,7 +39,7 @@ public class ConteudoTest {
 	}
 
 	@Test
-	public void testConteudoExcluir() throws InterruptedException {
+	public void testConteudoExcluir() throws InterruptedException, AWTException {
 		ConteudoPages.ExcluirConteudo();
 	}
 

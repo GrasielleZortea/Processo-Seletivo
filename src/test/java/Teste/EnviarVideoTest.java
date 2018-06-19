@@ -21,7 +21,7 @@ public class EnviarVideoTest {
 	public void setUpBeforeClass() throws Exception {
 		System.setProperty("webdriver.chrome.driver", "src\\test\\java\\drivers\\chromedriver.exe");
 		navegador = new ChromeDriver();
-		navegador.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		navegador.manage().timeouts().implicitlyWait(5, TimeUnit.MINUTES);
 		navegador.get("http://web1.qa.sambatech.com:10000/auth/login?redirect=dashboard");
 		LoginPages = new LoginPages(navegador);
 		LoginPages.LoginComSucesso();
@@ -34,7 +34,7 @@ public class EnviarVideoTest {
 	}
 
 	@Test
-	public void testEnviarVideo() throws AWTException {
+	public void testEnviarVideo() throws AWTException, InterruptedException {
 		enviarVideosPage.UploadoSucesso();
 	}
 

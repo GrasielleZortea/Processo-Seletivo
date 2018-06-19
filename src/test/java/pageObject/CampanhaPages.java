@@ -2,9 +2,12 @@ package pageObject;
 
 import static org.junit.Assert.assertEquals;
 
+import java.awt.AWTException;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+
+import common.Arquivo;
 
 public class CampanhaPages {
 
@@ -28,18 +31,15 @@ public class CampanhaPages {
 		this.navegador = navegador;
 	}
 
-	public void CriarCampanha() {
+	public void CriarCampanha() throws AWTException, InterruptedException {
 		// Criar uma campanha para testar bug de nao criar campanha
 
 		navegador.findElement(monetizacao).click();
 		navegador.findElement(criarCampanha).click();
 		navegador.findElement(titulo).sendKeys("Criacao de campanha 01");
 		// Escolher arquivo
-		/*navegador.findElement(enviarAnuncio).click();
-		WebElement file_input = navegador.findElement(enviarAnuncio);
-		file_input.click();
-		file_input.sendKeys("src\\test\\java\\arquivos\\Video Linxo 20s.mov");*/
-		//
+		Arquivo video = new Arquivo();
+		video.ArquivoTela("Video Linxo 20s.mov");
 		navegador.findElement(urlDestino).sendKeys("Sambatech.com.br");
 		navegador.findElement(categoria).click();
 		navegador.findElement(dataInicio).sendKeys("19/06/2018");
@@ -49,15 +49,14 @@ public class CampanhaPages {
 		navegador.findElement(gravar).isDisplayed();
 		navegador.findElement(gravar).click();
 
-		String msgSucessoCampanha = navegador.findElement(By.className(
-				"alert alert-error fixed-errors")).getText();
+		String msgSucessoCampanha = navegador.findElement(By.className("alert alert-error fixed-errors")).getText();
 		assertEquals("com sucesso!", msgSucessoCampanha);
 	}
 
 	public void ValidarCampoSemLimite() {
-		// Testa a falta de limite de caracteres nos campos Custo e meta que 
+		// Testa a falta de limite de caracteres nos campos Custo e meta que
 		// impossibilita o calculo da previsao da receita.
-		
+
 		navegador.findElement(monetizacao).click();
 		navegador.findElement(criarCampanha).click();
 		navegador.findElement(meta).sendKeys("1000000000000000000000");
